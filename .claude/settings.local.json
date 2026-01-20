@@ -8,7 +8,12 @@
       "Bash(git init)",
       "Bash(git reset)",
       "Bash(vercel link:*)",
-      "Bash(vercel deploy:*)"
+      "Bash(vercel deploy:*)",
+      "Bash(vercel project add:*)",
+      "Bash(vercel git connect:*)",
+      "Bash(vercel project settings:*)",
+      "Bash(vercel project inspect:*)",
+      "Bash(vercel:*)"
     ]
   }
 }
