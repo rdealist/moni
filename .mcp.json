@@ -1,0 +1,153 @@
+{
+  "mcpServers": {
+    "Context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ],
+      "env": {},
+      "autoApprove": []
+    },
+    "mcp-feedback-enhanced": {
+      "command": "uvx",
+      "args": [
+        "mcp-feedback-enhanced@latest"
+      ],
+      "env": {
+        "MCP_DESKTOP_MODE": "true",
+        "MCP_WEB_HOST": "127.0.0.1",
+        "MCP_WEB_PORT": "8765",
+        "MCP_DEBUG": "false"
+      },
+      "timeout": 600,
+      "autoApprove": [
+        "interactive_feedback"
+      ]
+    },
+    "Sequential Thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking@latest"
+      ],
+      "env": {},
+      "autoApprove": []
+    },
+    "Shrimp Task Manager": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-shrimp-task-manager@latest"
+      ],
+      "env": {},
+      "autoApprove": []
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem@latest",
+        "${MCP_FS_PATH_1:-.}",
+        "${MCP_FS_PATH_2:-$HOME/Desktop}",
+        "${MCP_FS_PATH_3:-$HOME/Documents}"
+      ],
+      "env": {},
+      "autoApprove": []
+    },
+    "magic": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@21st-dev/magic@latest"
+      ],
+      "env": {
+        "API_KEY": "${MAGIC_API_KEY}"
+      },
+      "autoApprove": []
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest"
+      ],
+      "env": {},
+      "type": "stdio",
+      "autoApprove": []
+    },
+    "docker": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-server-docker@latest"
+      ],
+      "env": {},
+      "type": "stdio",
+      "autoApprove": []
+    },
+    "mysql": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@benborla29/mcp-server-mysql@latest"
+      ],
+      "env": {
+        "MYSQL_HOST": "${MYSQL_HOST:-localhost}",
+        "MYSQL_PORT": "${MYSQL_PORT:-3306}",
+        "MYSQL_USER": "${MYSQL_USER:-root}",
+        "MYSQL_PASS": "${MYSQL_PASS}",
+        "MYSQL_DB": "${MYSQL_DB:-test}"
+      },
+      "type": "stdio",
+      "autoApprove": []
+    },
+    "magic-ui": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "magicui-mcp@latest"
+      ],
+      "env": {},
+      "type": "stdio",
+      "autoApprove": []
+    },
+    "time-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "time-mcp@latest"
+      ],
+      "env": {},
+      "type": "stdio",
+      "autoApprove": []
+    },
+    "redis-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@pickstar-2002/redis-mcp@latest",
+        "--host",
+        "${REDIS_HOST:-localhost}",
+        "--port",
+        "${REDIS_PORT:-6379}",
+        "--password",
+        "${REDIS_PASS}",
+        "--db",
+        "${REDIS_DB:-0}"
+      ],
+      "env": {},
+      "autoApprove": []
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
+      "env": {},
+      "type": "stdio",
+      "autoApprove": []
+    }
+  }
+}
