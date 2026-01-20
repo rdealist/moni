@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "Moni - Investment Portfolio",
   description: "Agile investment portfolio management for the modern investor",
   keywords: ["investment", "portfolio", "finance", "stocks", "crypto"],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export const viewport: Viewport = {
