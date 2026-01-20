@@ -1,0 +1,8 @@
+node_modules
+.git
+.claude
+*.jpg
+*.png
+*.gif
+.next
+.turbo
