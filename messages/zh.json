@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "title": "Moni 摹尼 - 投资组合管理",
+    "description": "为现代投资者打造的敏捷投资组合管理工具"
+  },
+  "nav": {
+    "dashboard": "仪表盘",
+    "holdings": "持仓",
+    "analysis": "分析",
+    "transactions": "交易记录",
+    "settings": "设置"
+  },
+  "header": {
+    "search": "搜索资产...",
+    "addAsset": "添加资产"
+  },
+  "portfolio": {
+    "totalPortfolio": "总资产",
+    "todayPnL": "今日盈亏",
+    "unrealizedGains": "未实现收益",
+    "cashBalance": "现金余额"
+  },
+  "charts": {
+    "assetAllocation": "资产配置",
+    "performance": "业绩表现",
+    "returns": "收益率"
+  },
+  "actions": {
+    "addHolding": "添加持仓",
+    "addTransaction": "添加交易",
+    "export": "导出",
+    "import": "导入",
+    "refresh": "刷新"
+  },
+  "settings": {
+    "theme": "主题",
+    "language": "语言",
+    "profile": "个人资料",
+    "notifications": "通知",
+    "security": "安全",
+    "data": "数据管理"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "发生错误",
+    "success": "成功",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "view": "查看"
+  }
+}

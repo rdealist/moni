@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "title": "Moni - Investment Portfolio",
+    "description": "Agile investment portfolio management for the modern investor"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "holdings": "Holdings",
+    "analysis": "Analysis",
+    "transactions": "Transactions",
+    "settings": "Settings"
+  },
+  "header": {
+    "search": "Search assets...",
+    "addAsset": "Add Asset"
+  },
+  "portfolio": {
+    "totalPortfolio": "Total Portfolio",
+    "todayPnL": "Today's P&L",
+    "unrealizedGains": "Unrealized Gains",
+    "cashBalance": "Cash Balance"
+  },
+  "charts": {
+    "assetAllocation": "Asset Allocation",
+    "performance": "Performance",
+    "returns": "Returns"
+  },
+  "actions": {
+    "addHolding": "Add Holding",
+    "addTransaction": "Add Transaction",
+    "export": "Export",
+    "import": "Import",
+    "refresh": "Refresh"
+  },
+  "settings": {
+    "theme": "Theme",
+    "language": "Language",
+    "profile": "Profile",
+    "notifications": "Notifications",
+    "security": "Security",
+    "data": "Data Management"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View"
+  }
+}

@@ -2,71 +2,74 @@
 
 import { TrendingUp, TrendingDown, Wallet, PiggyBank, Target, Activity } from "lucide-react";
 import { cn } from "@moni/ui/lib/utils";
-
-const stats = [
-  {
-    label: "Total Portfolio",
-    value: "1,234,567.89",
-    currency: "¥",
-    change: "+2.34%",
-    changeValue: "+28,234.56",
-    trend: "up",
-    icon: Wallet,
-    color: "blue",
-  },
-  {
-    label: "Today's P&L",
-    value: "28,234.56",
-    currency: "¥",
-    change: "+2.34%",
-    trend: "up",
-    icon: TrendingUp,
-    color: "mint",
-  },
-  {
-    label: "Unrealized Gains",
-    value: "156,789.00",
-    currency: "¥",
-    change: "+14.5%",
-    trend: "up",
-    icon: Target,
-    color: "peach",
-  },
-  {
-    label: "Cash Balance",
-    value: "50,000.00",
-    currency: "¥",
-    change: "0%",
-    trend: "neutral",
-    icon: PiggyBank,
-    color: "slate",
-  },
-];
-
-const colorClasses = {
-  blue: {
-    bg: "bg-brand-blue/10",
-    text: "text-brand-blue",
-    glow: "shadow-glow",
-  },
-  mint: {
-    bg: "bg-brand-mint/10",
-    text: "text-brand-mint",
-    glow: "shadow-glow-mint",
-  },
-  peach: {
-    bg: "bg-brand-peach/10",
-    text: "text-brand-peach",
-    glow: "shadow-glow-peach",
-  },
-  slate: {
-    bg: "bg-brand-slate/10",
-    text: "text-brand-slate",
-    glow: "",
-  },
-};
+import { useTranslations } from "next-intl";
 
 export function PortfolioOverview() {
+  const t = useTranslations("portfolio");
+
+  const stats = [
+    {
+      label: t("totalPortfolio"),
+      value: "1,234,567.89",
+      currency: "¥",
+      change: "+2.34%",
+      changeValue: "+28,234.56",
+      trend: "up",
+      icon: Wallet,
+      color: "blue",
+    },
+    {
+      label: t("todayPnL"),
+      value: "28,234.56",
+      currency: "¥",
+      change: "+2.34%",
+      trend: "up",
+      icon: TrendingUp,
+      color: "mint",
+    },
+    {
+      label: t("unrealizedGains"),
+      value: "156,789.00",
+      currency: "¥",
+      change: "+14.5%",
+      trend: "up",
+      icon: Target,
+      color: "peach",
+    },
+    {
+      label: t("cashBalance"),
+      value: "50,000.00",
+      currency: "¥",
+      change: "0%",
+      trend: "neutral",
+      icon: PiggyBank,
+      color: "slate",
+    },
+  ];
+
+  const colorClasses = {
+    blue: {
+      bg: "bg-brand-blue/10",
+      text: "text-brand-blue",
+      glow: "shadow-glow",
+    },
+    mint: {
+      bg: "bg-brand-mint/10",
+      text: "text-brand-mint",
+      glow: "shadow-glow-mint",
+    },
+    peach: {
+      bg: "bg-brand-peach/10",
+      text: "text-brand-peach",
+      glow: "shadow-glow-peach",
+    },
+    slate: {
+      bg: "bg-brand-slate/10",
+      text: "text-brand-slate",
+      glow: "",
+    },
+  };
+
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {stats.map((stat, index) => {

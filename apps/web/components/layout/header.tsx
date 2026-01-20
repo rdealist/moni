@@ -2,20 +2,27 @@
 
 import { Search, Bell, Plus } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageToggle } from "@/components/language-toggle";
 import { Button } from "@moni/ui/components/ui/button";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
-const pageTitle: Record<string, string> = {
-  "/": "Dashboard",
-  "/holdings": "Holdings",
-  "/analysis": "Analysis",
-  "/transactions": "Transactions",
-  "/settings": "Settings",
+const pageTitleKeys: Record<string, string> = {
+  "/": "dashboard",
+  "/holdings": "holdings",
+  "/analysis": "analysis",
+  "/transactions": "transactions",
+  "/settings": "settings",
 };
 
 export function Header() {
   const pathname = usePathname();
-  const title = pageTitle[pathname] || "Dashboard";
+  const t = useTranslations("nav");
+
+  // Get the path without locale prefix
+  const locale = pathname.split("/")[1];
+  const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
+  const titleKey = pageTitleKeys[pathWithoutLocale] || "dashboard";
 
   return (
     <header className="sticky top-0 z-40 flex h-16 items-center justify-between border-b border-border/50 bg-background/80 backdrop-blur-md px-6 transition-colors">
@@ -23,10 +30,10 @@ export function Header() {
       <div className="flex items-center gap-4">
         <div>
           <h1 className="text-lg font-semibold text-foreground tracking-tight">
-            {title}
+            {t(titleKey)}
           </h1>
           <p className="text-xs text-muted-foreground">
-            {new Date().toLocaleDateString("en-US", {
+            {new Date().toLocaleDateString(locale === "zh" ? "zh-CN" : "en-US", {
               weekday: "long",
               month: "short",
               day: "numeric",
@@ -52,6 +59,9 @@ export function Header() {
           <Bell className="h-[18px] w-[18px]" />
           <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-primary-peach animate-pulse" />
         </button>
+
+        {/* Language toggle */}
+        <LanguageToggle />
 
         {/* Theme toggle */}
         <ThemeToggle />

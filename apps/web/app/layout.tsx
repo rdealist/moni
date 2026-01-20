@@ -1,4 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import { redirect } from "next/navigation";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { locales, defaultLocale } from "@/i18n/config";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
@@ -25,19 +29,30 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Redirect root to default locale
+  const pathname = '';
+  if (!pathname.startsWith(`/${defaultLocale}`)) {
+    redirect(`/${defaultLocale}`);
+  }
+
+  // Get messages for the locale
+  const messages = await getMessages();
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={defaultLocale} suppressHydrationWarning>
       <body className="font-sans antialiased">
-        <ThemeProvider defaultTheme="system" storageKey="moni-theme">
-          <div className="min-h-screen bg-gradient-subtle noise-overlay">
-            {children}
-          </div>
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider defaultTheme="system" storageKey="moni-theme">
+            <div className="min-h-screen bg-gradient-subtle noise-overlay">
+              {children}
+            </div>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
