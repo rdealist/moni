@@ -6,7 +6,9 @@
       "Bash(xargs kill:*)",
       "Bash(rm:*)",
       "Bash(git init)",
-      "Bash(git reset)"
+      "Bash(git reset)",
+      "Bash(vercel link:*)",
+      "Bash(vercel deploy:*)"
     ]
   }
 }
