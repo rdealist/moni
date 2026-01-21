@@ -13,7 +13,31 @@
       "Bash(vercel git connect:*)",
       "Bash(vercel project settings:*)",
       "Bash(vercel project inspect:*)",
-      "Bash(vercel:*)"
+      "Bash(vercel:*)",
+      "Bash(pnpm turbo build:*)",
+      "Bash(pnpm add:*)",
+      "Bash(/Users/wushihong/projects/moni/apps/web/app/[locale]/analysis/page.tsx)",
+      "Bash(test:*)",
+      "Bash(pnpm dev)",
+      "Bash(pnpm db:init:*)",
+      "Bash(pnpm db:push)",
+      "Bash(pnpm exec drizzle-kit push:*)",
+      "Bash(pnpm exec drizzle-kit generate:*)",
+      "Bash(pnpm exec drizzle-kit:*)",
+      "Bash(sqlite3:*)",
+      "Bash(npx tsx:*)",
+      "Bash(pnpm --filter @moni/db exec tsx:*)",
+      "Bash(npx turbo:*)",
+      "Bash(brew install:*)",
+      "Bash(turso auth token:*)",
+      "Bash(turso auth signup:*)",
+      "Bash(turso db create:*)",
+      "Bash(turso db show moni)",
+      "Bash(turso db tokens create:*)",
+      "Bash(TURSO_DATABASE_URL=\"libsql://moni-rdealist.aws-us-east-1.turso.io\" TURSO_AUTH_TOKEN=\"eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3Njg5MjY4MzAsImlkIjoiZWMwYzM0MGMtMjdiMi00NzUxLTljM2QtMjcxNDFkODlmNWY1IiwicmlkIjoiMDY2YmY3YzgtNjg2Yy00ZWM5LWFmZjYtZjQzNWFlZDcwN2JiIn0.DkQ14fseHDZg7wjfDeFM1vkarwEzW3CicpnMx_H7JDy3_SeCfsHHvcbUeUWf0-5N28BmkBXVicpYq5CLh0ILCw\" pnpm exec drizzle-kit push:sqlite:*)",
+      "Bash(TURSO_DATABASE_URL=\"libsql://moni-rdealist.aws-us-east-1.turso.io\" TURSO_AUTH_TOKEN=\"eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3Njg5MjY4MzAsImlkIjoiZWMwYzM0MGMtMjdiMi00NzUxLTljM2QtMjcxNDFkODlmNWY1IiwicmlkIjoiMDY2YmY3YzgtNjg2Yy00ZWM5LWFmZjYtZjQzNWFlZDcwN2JiIn0.DkQ14fseHDZg7wjfDeFM1vkarwEzW3CicpnMx_H7JDy3_SeCfsHHvcbUeUWf0-5N28BmkBXVicpYq5CLh0ILCw\" npx tsx:*)",
+      "Bash(TURSO_DATABASE_URL=\"libsql://moni-rdealist.aws-us-east-1.turso.io\" TURSO_AUTH_TOKEN=\"eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3Njg5MjY4MzAsImlkIjoiZWMwYzM0MGMtMjdiMi00NzUxLTljM2QtMjcxNDFkODlmNWY1IiwicmlkIjoiMDY2YmY3YzgtNjg2Yy00ZWM5LWFmZjYtZjQzNWFlZDcwN2JiIn0.DkQ14fseHDZg7wjfDeFM1vkarwEzW3CicpnMx_H7JDy3_SeCfsHHvcbUeUWf0-5N28BmkBXVicpYq5CLh0ILCw\" npx:*)",
+      "Bash(printf:*)"
     ]
   }
 }

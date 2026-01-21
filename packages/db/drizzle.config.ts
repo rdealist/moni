@@ -4,7 +4,7 @@ export default {
   schema: "./src/schema.ts",
   driver: "better-sqlite",
   dbCredentials: {
-    url: "moni.db",
+    url: "../../local.db",
   },
   out: "./drizzle",
 } satisfies Config;

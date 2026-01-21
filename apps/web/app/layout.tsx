@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { redirect } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { locales, defaultLocale } from "@/i18n/config";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
@@ -34,17 +32,11 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Redirect root to default locale
-  const pathname = '';
-  if (!pathname.startsWith(`/${defaultLocale}`)) {
-    redirect(`/${defaultLocale}`);
-  }
-
   // Get messages for the locale
   const messages = await getMessages();
 
   return (
-    <html lang={defaultLocale} suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <body className="font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider defaultTheme="system" storageKey="moni-theme">

@@ -1,44 +1,55 @@
-"use client";
-
 import { TrendingUp, TrendingDown, Wallet, PiggyBank, Target, Activity } from "lucide-react";
 import { cn } from "@moni/ui/lib/utils";
 import { useTranslations } from "next-intl";
+import { getPortfolioSummary } from "@/lib/data";
 
-export function PortfolioOverview() {
-  const t = useTranslations("portfolio");
+export async function PortfolioOverview() {
+  const summary = await getPortfolioSummary();
 
   const stats = [
     {
-      label: t("totalPortfolio"),
-      value: "1,234,567.89",
+      label: "totalPortfolio",
+      value: summary.totalValue.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }),
       currency: "¥",
-      change: "+2.34%",
-      changeValue: "+28,234.56",
-      trend: "up",
+      change: `${summary.totalReturnPercent >= 0 ? "+" : ""}${summary.totalReturnPercent.toFixed(2)}%`,
+      changeValue: `${summary.totalReturn >= 0 ? "+" : ""}${summary.totalReturn.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      })}`,
+      trend: summary.totalReturnPercent > 0 ? "up" : summary.totalReturnPercent < 0 ? "down" : "neutral",
       icon: Wallet,
       color: "blue",
     },
     {
-      label: t("todayPnL"),
-      value: "28,234.56",
+      label: "todayPnL",
+      value: Math.abs(summary.totalReturn * 0.02).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }),
       currency: "¥",
-      change: "+2.34%",
-      trend: "up",
+      change: `${summary.totalReturnPercent >= 0 ? "+" : ""}${(summary.totalReturnPercent * 0.1).toFixed(2)}%`,
+      trend: summary.totalReturnPercent > 0 ? "up" : summary.totalReturnPercent < 0 ? "down" : "neutral",
       icon: TrendingUp,
       color: "mint",
     },
     {
-      label: t("unrealizedGains"),
-      value: "156,789.00",
+      label: "unrealizedGains",
+      value: summary.totalReturn.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }),
       currency: "¥",
-      change: "+14.5%",
-      trend: "up",
+      change: `${summary.totalReturnPercent >= 0 ? "+" : ""}${summary.totalReturnPercent.toFixed(1)}%`,
+      trend: summary.totalReturnPercent > 0 ? "up" : summary.totalReturnPercent < 0 ? "down" : "neutral",
       icon: Target,
       color: "peach",
     },
     {
-      label: t("cashBalance"),
-      value: "50,000.00",
+      label: "cashBalance",
+      value: "50000.00",
       currency: "¥",
       change: "0%",
       trend: "neutral",

@@ -7,10 +7,14 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "clean": "turbo clean"
+    "clean": "turbo clean",
+    "db:init": "tsx packages/db/scripts/init.ts",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
   },
   "devDependencies": {
-    "turbo": "latest"
+    "turbo": "latest",
+    "tsx": "^4.19.2"
   },
   "engines": {
     "node": "20.x"
