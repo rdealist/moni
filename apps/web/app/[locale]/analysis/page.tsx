@@ -2,8 +2,6 @@
 
 import { Shell } from "@/components/layout/shell";
 import {
-  AreaChart,
-  Area,
   XAxis,
   YAxis,
   Tooltip,
@@ -20,7 +18,7 @@ import {
 } from "recharts";
 import { cn } from "@moni/ui/lib/utils";
 import { useState } from "react";
-import { TrendingUp, TrendingDown, Target, Shield, Zap, AlertTriangle } from "lucide-react";
+import { TrendingUp, TrendingDown, Target, Zap, AlertTriangle } from "lucide-react";
 
 const performanceData = [
   { month: "Jan", portfolio: 4.2, benchmark: 3.1 },

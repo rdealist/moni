@@ -5,7 +5,6 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   Plus,
-  Filter,
   Search,
   Download,
   Calendar,

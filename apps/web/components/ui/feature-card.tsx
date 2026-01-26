@@ -1,5 +1,5 @@
 import { LucideIcon } from "lucide-react";
-import { Button } from "@moni/ui/components/ui/button";
+import { Button, type ButtonProps } from "@moni/ui/components/ui/button";
 import { IconBadge } from "./icon-badge";
 import { cn } from "@moni/ui/lib/utils";
 
@@ -24,7 +24,9 @@ export function FeatureCard({
   onButtonClick,
   className,
 }: FeatureCardProps) {
-  const btnVariant = buttonVariant ? `pill-${buttonVariant}` as any : "default";
+  const btnVariant: ButtonProps["variant"] = buttonVariant
+    ? (`pill-${buttonVariant}` as ButtonProps["variant"])
+    : "default";
 
   return (
     <div 

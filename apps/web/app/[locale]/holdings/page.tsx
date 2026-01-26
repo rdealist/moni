@@ -6,9 +6,7 @@ import {
   TrendingDown,
   MoreHorizontal,
   Plus,
-  Filter,
   Search,
-  ArrowUpDown,
   Grid3X3,
   List,
 } from "lucide-react";

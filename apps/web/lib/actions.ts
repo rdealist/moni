@@ -1,6 +1,6 @@
 "use server";
 
-import { db, assets } from "@moni/db";
+import { getDb, assets } from "@moni/db";
 import { revalidatePath } from "next/cache";
 
 export async function addAsset(formData: FormData) {
@@ -15,6 +15,7 @@ export async function addAsset(formData: FormData) {
   // Generate ID (simple implementation)
   const id = crypto.randomUUID();
 
+  const db = getDb();
   await db.insert(assets).values({
     id,
     symbol: symbol.toUpperCase(),

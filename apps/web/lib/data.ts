@@ -1,12 +1,20 @@
-import { db, assets, holdings, transactions, desc, eq, sql } from "@moni/db";
+import { getDb, assets, holdings, transactions, desc, eq, sql } from "@moni/db";
+
+function isBuildTime() {
+  return process.env.NEXT_PHASE === "phase-production-build";
+}
 
 // Get all assets
 export async function getAssets() {
+  if (isBuildTime()) return [];
+  const db = getDb();
   return await db.select().from(assets).orderBy(desc(assets.createdAt));
 }
 
 // Get asset by symbol
 export async function getAssetBySymbol(symbol: string) {
+  if (isBuildTime()) return undefined;
+  const db = getDb();
   const [asset] = await db
     .select()
     .from(assets)
@@ -17,6 +25,8 @@ export async function getAssetBySymbol(symbol: string) {
 
 // Get all holdings with asset information
 export async function getHoldingsWithAssets() {
+  if (isBuildTime()) return [];
+  const db = getDb();
   return await db
     .select({
       id: holdings.id,
@@ -38,6 +48,17 @@ export async function getHoldingsWithAssets() {
 
 // Get portfolio summary
 export async function getPortfolioSummary() {
+  if (isBuildTime()) {
+    return {
+      totalValue: 0,
+      totalCost: 0,
+      totalReturn: 0,
+      totalReturnPercent: 0,
+      assetCount: 0,
+      assets: {},
+    };
+  }
+
   const allHoldings = await getHoldingsWithAssets();
 
   let totalValue = 0;
@@ -84,6 +105,8 @@ export async function getPortfolioSummary() {
 
 // Get recent transactions
 export async function getRecentTransactions(limit = 10) {
+  if (isBuildTime()) return [];
+  const db = getDb();
   return await db
     .select({
       id: transactions.id,
