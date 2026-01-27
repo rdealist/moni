@@ -7,6 +7,7 @@ import {
   Wallet,
   PieChart,
   ArrowRightLeft,
+  FileText,
   Settings,
   ChevronLeft,
   ChevronRight,
@@ -21,6 +22,7 @@ const navItems = [
   { href: "/holdings", icon: Wallet, key: "holdings" },
   { href: "/analysis", icon: PieChart, key: "analysis" },
   { href: "/transactions", icon: ArrowRightLeft, key: "transactions" },
+  { href: "/docs", icon: FileText, key: "docs" },
 ];
 
 export function Sidebar() {
