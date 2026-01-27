@@ -8,6 +8,7 @@ import {
   PieChart,
   ArrowRightLeft,
   FileText,
+  Bot,
   Settings,
   ChevronLeft,
   ChevronRight,
@@ -23,6 +24,7 @@ const navItems = [
   { href: "/analysis", icon: PieChart, key: "analysis" },
   { href: "/transactions", icon: ArrowRightLeft, key: "transactions" },
   { href: "/docs", icon: FileText, key: "docs" },
+  { href: "/okx", icon: Bot, key: "okxBot" },
 ];
 
 export function Sidebar() {
